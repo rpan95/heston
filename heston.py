@@ -46,7 +46,7 @@ def bls_call(s0, K, t, r, sigma):
 if __name__ == "__main__":
     kappa = 2.0
     theta = 0.01
-    # sigma = 0.1
+    sigma = 0.1
     # sigma = 0.2
     rho = 0
     v0 = 0.01
@@ -58,13 +58,13 @@ if __name__ == "__main__":
     diff_01 = []
     for s0 in np.arange(70, 141, 1):
         hst_call = heston_call(kappa, theta, 0.1, rho, v0, r, t, s0, K)
-        bs_call = bls_call(s0, K, t, r, 0.1)
+        bs_call = bls_call(s0, K, t, r, sigma)
         diff_01.append(hst_call - bs_call)
 
     diff_02 = []
     for s0 in np.arange(70, 141, 1):
         hst_call = heston_call(kappa, theta, 0.2, rho, v0, r, t, s0, K)
-        bs_call = bls_call(s0, K, t, r, 0.2)
+        bs_call = bls_call(s0, K, t, r, sigma)
         diff_02.append(hst_call - bs_call)
 
     spot_price = np.arange(70, 141, 1)
