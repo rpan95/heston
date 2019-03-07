@@ -8,10 +8,10 @@ import matplotlib.pyplot as plt
 def char_func(phi, kappa, theta, sigma, rho, v0, r, t, s0, func_type):
     if func_type == 1:
         u = 0.5
-        b = kappa + theta - rho * sigma
+        b = kappa - rho * sigma
     else:
         u = -0.5
-        b = kappa + theta
+        b = kappa
     x = np.log(s0)
     a = kappa * theta
     d = np.sqrt((rho * sigma * phi * 1j - b) ** 2 - sigma ** 2 * (2 * u * phi * 1j - phi ** 2))
