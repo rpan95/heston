@@ -69,10 +69,12 @@ if __name__ == "__main__":
 
     spot_price = np.arange(70, 141, 1)
     plt.figure()
-    plt.title('Option Price Difference from SV Model and BS Model')
     plt.plot(spot_price, diff_01, label='sigma = 0.1')
     plt.plot(spot_price, diff_02, label='sigma = 0.2')
+    plt.plot(spot_price, [0]*71, 'r--')
+    plt.xlim(70,140)
     plt.xlabel('Spot Price ($)')
     plt.ylabel('Price Difference ($)')
+    plt.title('Option Price Difference from SV Model and BS Model')
     plt.legend()
     plt.show()
