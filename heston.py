@@ -69,6 +69,6 @@ if __name__ == "__main__":
 
     spot_price = np.arange(70, 141, 1)
     plt.figure()
-    # plt.plot(spot_price, diff_01)
+    plt.plot(spot_price, diff_01)
     plt.plot(spot_price, diff_02)
     plt.show()
